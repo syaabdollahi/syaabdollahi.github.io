@@ -597,7 +597,12 @@ body.menu-open .mm-link:nth-child(6){transition-delay:.3s}
   font-weight:430;line-height:1.5;max-width:52ch;
 }
 .pub-cite em{color:var(--euca-ink)}
-.pub-note {font-size: 0.82rem;margin-top: 0.45rem;margin-bottom: 0.6rem;color: var(--muted);}
+.pub-note {
+  font-size: 0.82rem;
+  margin-top: 0.45rem;
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+}
 .pub-meta{margin-top:1rem;font-size:.88rem;color:var(--muted)}
 .pub-meta a{color:var(--violet-ink);font-weight:600;border-bottom:1px solid var(--lav)}
 .pub-meta a:hover{border-bottom-color:var(--violet-ink)}
