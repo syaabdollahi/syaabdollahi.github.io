@@ -301,6 +301,84 @@
   object-fit: contain;
   border-radius: 1.25rem;
 }
+    /* ===================== DACSS PHOTO PAIR ===================== */
+
+.dacss-photos {
+  position: relative;
+  min-height: 500px;
+  padding-bottom: 4rem;
+}
+
+
+/* Main rectangular poster */
+
+.dacss-poster {
+  width: 88%;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: rgba(255,255,255,.6);
+  border: 1px solid var(--line);
+  padding: .6rem;
+  box-shadow: 0 16px 40px rgba(35,30,40,.08);
+}
+
+.dacss-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: .8rem;
+}
+
+
+/* Smaller arched symposium photo */
+
+.dacss-presenting {
+  position: absolute;
+  width: 39%;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  aspect-ratio: 3 / 4;
+
+  border-radius: 50% 50% 1.1rem 1.1rem / 24% 24% 1.1rem 1.1rem;
+
+  padding: .4rem;
+  background: var(--ivory, #f7f3eb);
+
+  box-shadow: 0 18px 40px rgba(35,30,40,.16);
+}
+
+.dacss-presenting img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Keeps both you and the poster visible */
+  object-position: 62% center;
+
+  border-radius: 50% 50% .8rem .8rem / 24% 24% .8rem .8rem;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .dacss-photos {
+    min-height: 440px;
+    padding-bottom: 3rem;
+  }
+
+  .dacss-poster {
+    width: 90%;
+  }
+
+  .dacss-presenting {
+    width: 36%;
+  }
+}
   </style>
 </head>
 
@@ -719,26 +797,26 @@
 
 
         <div
-          class="method-visual"
-          data-reveal
-          style="--d:.14s"
-        >
+  class="method-visual"
+  data-reveal
+  style="--d:.14s"
+>
 
-          <div class="method-poster-frame">
+  <div class="method-poster-frame">
 
-            <!--
-              Export the DACSS poster PDF as an image and save it as:
-              assets/images/dacss-airbnb-poster.jpg
-            -->
+    <!--
+      Export the DACSS poster PDF as an image and save it as:
+      assets/images/dacss-airbnb-poster.jpg
+    -->
 
-            <img
-              src="assets/images/dacss-airbnb-poster.jpg"
-              alt="Poster titled Sentiments and Subjects: A Textual Journey through Airbnb Reviews"
-            />
+    <img
+      src="assets/images/dacss-airbnb-poster.jpg"
+      alt="Poster titled Sentiments and Subjects: A Textual Journey through Airbnb Reviews"
+    />
 
-          </div>
+  </div>
 
-        </div>
+</div>
 
       </div>
     </section>
