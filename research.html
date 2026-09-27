@@ -68,7 +68,7 @@
   padding: .45rem;
 
   background: var(--ivory, #f7f3eb);
-  border-radius: 1.15rem;
+  border-radius: 50% 50% 1rem 1rem / 22% 22% 1rem 1rem;
 
   box-shadow:
     0 16px 35px rgba(35, 30, 40, .16);
@@ -83,7 +83,7 @@
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center top;
-  border-radius: .85rem;
+  border-radius: 50% 50% .7rem .7rem / 22% 22% .7rem .7rem;
 }
 
 
@@ -376,6 +376,102 @@
   }
 
   .dacss-presenting {
+    width: 36%;
+  }
+}
+    /* ===================== AMA PHOTO COLLAGE ===================== */
+
+.ama-gallery {
+  position: relative;
+  min-height: 480px;
+  padding-bottom: 3rem;
+}
+
+
+/* Main conference photo */
+
+.ama-main-photo {
+  position: relative;
+  width: 88%;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 45px rgba(35, 30, 40, .10);
+  z-index: 2;
+}
+
+.ama-main-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+
+/* Smaller arched portrait */
+
+.ama-secondary-photo {
+  position: absolute;
+  width: 34%;
+  right: 0;
+  bottom: 0;
+
+  padding: .45rem;
+  background: var(--ivory, #f7f3eb);
+
+  border-radius: 50% 50% 1rem 1rem / 22% 22% 1rem 1rem;
+
+  box-shadow: 0 16px 35px rgba(35, 30, 40, .16);
+
+  transform: rotate(2deg);
+  overflow: hidden;
+  z-index: 3;
+}
+
+.ama-secondary-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+
+  border-radius: 50% 50% .7rem .7rem / 22% 22% .7rem .7rem;
+}
+
+
+/* Keep St. Pete's lettering behind photos */
+
+.ama-gallery .stop-city {
+  z-index: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .ama-gallery {
+    min-height: auto;
+    padding-bottom: 2.5rem;
+  }
+
+  .ama-main-photo {
+    width: 92%;
+  }
+
+  .ama-secondary-photo {
+    width: 32%;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .ama-main-photo {
+    width: 94%;
+  }
+
+  .ama-secondary-photo {
     width: 36%;
   }
 }
@@ -1114,29 +1210,35 @@
           </div>
 
 
-          <div
-            class="stop-photo"
-            data-reveal="right"
-          >
+<div
+  class="stop-photo ama-gallery"
+  data-reveal="right"
+>
 
-            <span
-              class="stop-city"
-              aria-hidden="true"
-            >
-              St. Pete’s
-            </span>
+  <span
+    class="stop-city"
+    aria-hidden="true"
+  >
+    St. Pete’s
+  </span>
 
-            <div class="ph">
+  <!-- Main conference photo -->
+  <div class="ama-main-photo">
+    <img
+      src="assets/images/conference-ama-2024.jpg"
+      alt="Presenting research at the AMA Winter Academic Conference in Florida"
+    />
+  </div>
 
-              <img
-                src="assets/images/conference-ama-2024.jpg"
-                alt="Presenting research at the AMA Winter Academic Conference in Florida"
-                style="width:100%;height:100%;object-fit:cover;"
-              />
+  <!-- Smaller arched portrait -->
+  <div class="ama-secondary-photo">
+    <img
+      src="assets/images/conference-ama-2024II.jpg"
+      alt="At the AMA Winter Academic Conference in St. Pete's Beach, Florida"
+    />
+  </div>
 
-            </div>
-
-          </div>
+</div>
 
         </article>
 
