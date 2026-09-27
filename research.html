@@ -33,7 +33,105 @@
 
   <!-- Page-specific additions for the merged Research page -->
   <style>
+/* ===================== AMS PHOTO COLLAGE ===================== */
 
+.ams-gallery {
+  position: relative;
+  min-height: 480px;
+  padding-bottom: 3rem;
+}
+
+.ams-main-photo {
+  position: relative;
+  width: 88%;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 45px rgba(35, 30, 40, .10);
+}
+
+.ams-main-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+
+/* Vertical AMS portrait */
+
+.ams-secondary-photo {
+  position: absolute;
+  width: 34%;
+  right: 0;
+  bottom: 0;
+
+  padding: .45rem;
+
+  background: var(--ivory, #f7f3eb);
+  border-radius: 1.15rem;
+
+  box-shadow:
+    0 16px 35px rgba(35, 30, 40, .16);
+
+  transform: rotate(2deg);
+  z-index: 3;
+}
+
+.ams-secondary-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: .85rem;
+}
+
+
+/* Keep Savannah lettering behind the photographs */
+
+.ams-gallery .stop-city {
+  z-index: 0;
+}
+
+.ams-main-photo,
+.ams-secondary-photo {
+  z-index: 2;
+}
+
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 800px) {
+
+  .ams-gallery {
+    min-height: auto;
+    padding-bottom: 2.5rem;
+  }
+
+  .ams-main-photo {
+    width: 92%;
+  }
+
+  .ams-secondary-photo {
+    width: 32%;
+    right: 0;
+    bottom: 0;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .ams-main-photo {
+    width: 94%;
+  }
+
+  .ams-secondary-photo {
+    width: 36%;
+  }
+
+}
     /* ===================== RESEARCH STREAMS ===================== */
 
     .research-intro {
@@ -734,74 +832,82 @@
 
 
 
-        <!-- SAVANNAH -->
+<!-- SAVANNAH · AMS 2026 -->
 
-        <article class="stop">
+<article class="stop stop-ams">
 
-          <div
-            class="stop-text"
-            data-reveal="left"
-          >
+  <div
+    class="stop-text"
+    data-reveal="left"
+  >
 
-            <span class="stop-yr">
-              2026
-            </span>
+    <span class="stop-yr">
+      2026
+    </span>
 
-            <p class="stop-loc">
+    <p class="stop-loc">
 
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/>
-                <circle cx="12" cy="10" r="2.6"/>
-              </svg>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/>
+        <circle cx="12" cy="10" r="2.6"/>
+      </svg>
 
-              Savannah, Georgia · May 2026
+      Savannah, Georgia · May 2026
 
-            </p>
+    </p>
 
-            <h3>
-              The Burden of Recurring Consumption:
-              Mapping Subscription Fatigue and How People Cope
-            </h3>
+    <h3>
+      The Burden of Recurring Consumption:
+      Mapping Subscription Fatigue and How People Cope
+    </h3>
 
-            <p class="conf">
-              Academy of Marketing Science Annual Conference
-            </p>
+    <p class="conf">
+      Academy of Marketing Science Annual Conference
+    </p>
 
-          </div>
+  </div>
 
 
-          <div
-            class="stop-photo"
-            data-reveal="right"
-          >
+  <!-- AMS PHOTO COLLAGE -->
 
-            <span
-              class="stop-city"
-              aria-hidden="true"
-            >
-              Savannah
-            </span>
+  <div
+    class="stop-photo ams-gallery"
+    data-reveal="right"
+  >
 
-            <div class="ph">
+    <span
+      class="stop-city"
+      aria-hidden="true"
+    >
+      Savannah
+    </span>
 
-              <img
-                src="assets/images/conference-ams-2026.jpg"
-                alt="Presenting research at the Academy of Marketing Science Annual Conference in Savannah"
-                style="width:100%;height:100%;object-fit:cover;"
-              />
+    <!-- Main presentation photo -->
+    <div class="ams-main-photo">
+      <img
+        src="assets/images/conference-ams-2026I.jpg"
+        alt="Presenting research at the Academy of Marketing Science Annual Conference in Savannah"
+      />
+    </div>
 
-            </div>
+    <!-- Smaller portrait photo -->
+    <div class="ams-secondary-photo">
+      <img
+        src="assets/images/conference-ams-2026II.jpg"
+        alt="At the Academy of Marketing Science Annual Conference"
+      />
+    </div>
 
-          </div>
+  </div>
 
-        </article>
+</article>
 
 
 
@@ -860,15 +966,14 @@
               Nashville
             </span>
 
-            <div class="ph ph-arch">
+            <div class="ph nashville-photo">
 
-              <img
-                src="assets/images/conference-scp-2024.jpg"
-                alt="Presenting research at the Society for Consumer Psychology Conference in Nashville"
-                style="width:100%;height:100%;object-fit:cover;"
-              />
+  <img
+    src="assets/images/conference-scp-2024.jpg"
+    alt="Presenting research at the Society for Consumer Psychology Conference in Nashville"
+  />
 
-            </div>
+</div>
 
           </div>
 
